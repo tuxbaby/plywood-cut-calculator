@@ -19,7 +19,8 @@ A free web tool to optimize plywood sheet cutting and calculate cutting costs.
 
 ## 🌐 Live Demo
 
-Visit: [https://tuxbaby.github.io/plywood-calculator](https://tuxbaby.github.io/plywood-calculator)
+Visit: [https://github.com/tuxbaby/plywood-cut-calculator/](https://github.com/tuxbaby/plywood-cut-calculator/)
+
 
 ## 💡 Perfect For
 
