@@ -11,7 +11,6 @@
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
-
         :root {
             --system-gray-1: #8E8E93;
             --system-gray-2: #636366;
@@ -33,7 +32,6 @@
             --shadow: 0 4px 24px rgba(0,0,0,0.08);
             --shadow-elevated: 0 12px 48px rgba(0,0,0,0.15);
         }
-
         /* Dark mode variables */
         .dark-mode {
             --system-background: #000000;
@@ -44,7 +42,6 @@
             --shadow: 0 4px 24px rgba(0,0,0,0.4);
             --shadow-elevated: 0 12px 48px rgba(0,0,0,0.6);
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: var(--system-grouped-background);
@@ -55,7 +52,6 @@
             -moz-osx-font-smoothing: grayscale;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         .app-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -65,7 +61,6 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-
         .app-header {
             background: linear-gradient(135deg, var(--system-blue), #5AC8FA);
             color: white;
@@ -73,19 +68,16 @@
             text-align: center;
             position: relative;
         }
-
         .app-header h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
         }
-
         .app-header .subtitle {
             font-size: 17px;
             opacity: 0.9;
             font-weight: 400;
         }
-
         .header-controls {
             position: absolute;
             top: 24px;
@@ -94,7 +86,6 @@
             gap: 12px;
             align-items: center;
         }
-
         .control-btn {
             background: rgba(255,255,255,0.2);
             border: 1px solid rgba(255,255,255,0.3);
@@ -107,11 +98,9 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-
         .control-btn:hover {
             background: rgba(255,255,255,0.3);
         }
-
         .main-content {
             padding: 24px;
             display: grid;
@@ -119,19 +108,16 @@
             gap: 24px;
             align-items: start;
         }
-
         @media (max-width: 1024px) {
             .main-content {
                 grid-template-columns: 1fr;
             }
-            
             .header-controls {
                 position: static;
                 justify-content: center;
                 margin-top: 15px;
             }
         }
-
         /* Input Section */
         .input-section {
             background: var(--system-background);
@@ -142,19 +128,16 @@
             position: relative;
             z-index: 1;
         }
-
         .input-section:focus-within {
             transform: scale(1.02);
             box-shadow: var(--shadow-elevated);
             z-index: 10;
         }
-
         .main-content:has(.input-section:focus-within) .input-section:not(:focus-within),
         .main-content:has(.input-section:focus-within) .visualization-section {
             opacity: 0.4;
             filter: blur(1px);
         }
-
         .input-section h2 {
             color: var(--system-label);
             margin-bottom: 24px;
@@ -162,11 +145,9 @@
             font-weight: 600;
             text-align: center;
         }
-
         .input-group {
             margin-bottom: 24px;
         }
-
         .input-label {
             font-weight: 600;
             color: var(--system-label);
@@ -174,7 +155,6 @@
             font-size: 17px;
             text-align: center;
         }
-
         /* Sheet Size Picker */
         .sheet-size-group {
             background: var(--system-grouped-background);
@@ -183,14 +163,12 @@
             margin: 20px 0;
             border-left: 4px solid var(--system-blue);
         }
-
         .sheet-size-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             gap: 12px;
             margin: 16px 0;
         }
-
         .sheet-size-btn {
             padding: 12px 8px;
             border: 2px solid var(--system-secondary-background);
@@ -203,13 +181,11 @@
             transition: all 0.3s ease;
             text-align: center;
         }
-
         .sheet-size-btn.active {
             border-color: var(--system-blue);
             background: var(--system-blue);
             color: white;
         }
-
         .custom-sheet-inputs {
             display: none;
             gap: 12px;
@@ -217,15 +193,12 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .custom-sheet-inputs.active {
             display: flex;
         }
-
         .custom-sheet-inputs input {
             width: 100px;
         }
-
         /* Unit selection with circular radio buttons */
         .unit-selection {
             display: flex;
@@ -234,7 +207,6 @@
             margin: 20px 0;
             flex-wrap: wrap;
         }
-
         .unit-option {
             position: relative;
             display: flex;
@@ -242,7 +214,6 @@
             align-items: center;
             cursor: pointer;
         }
-
         .unit-radio {
             appearance: none;
             -webkit-appearance: none;
@@ -257,12 +228,10 @@
             align-items: center;
             justify-content: center;
         }
-
         .unit-radio:checked {
             border-color: var(--system-blue);
             background: var(--system-blue);
         }
-
         .unit-radio:checked::after {
             content: '';
             width: 18px;
@@ -270,7 +239,6 @@
             border-radius: 50%;
             background: white;
         }
-
         .unit-label {
             margin-top: 8px;
             font-size: 14px;
@@ -278,19 +246,16 @@
             color: var(--system-secondary-label);
             transition: color 0.3s ease;
         }
-
         .unit-radio:checked + .unit-label {
             color: var(--system-blue);
             font-weight: 600;
         }
-
         /* Metric/Imperial Toggle */
         .unit-system-toggle {
             display: flex;
             justify-content: center;
             margin: 16px 0;
         }
-
         .toggle-btn {
             background: var(--system-grouped-background);
             border: 2px solid var(--system-secondary-background);
@@ -302,13 +267,11 @@
             transition: all 0.3s ease;
             color: var(--system-label);
         }
-
         .toggle-btn.active {
             background: var(--system-blue);
             border-color: var(--system-blue);
             color: white;
         }
-
         .input-row {
             display: flex;
             gap: 16px;
@@ -317,7 +280,6 @@
             margin: 20px 0;
             flex-wrap: wrap;
         }
-
         input {
             padding: 18px;
             border: 1.5px solid var(--system-secondary-background);
@@ -330,19 +292,16 @@
             font-weight: 500;
             color: var(--system-label);
         }
-
         input:focus {
             outline: none;
             border-color: var(--system-blue);
             box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
         }
-
         .dimension-separator {
             font-size: 20px;
             font-weight: 400;
             color: var(--system-secondary-label);
         }
-
         .unit-hint {
             color: var(--system-secondary-label);
             font-size: 15px;
@@ -350,7 +309,6 @@
             margin-top: 12px;
             line-height: 1.4;
         }
-
         .kerf-input-group, .cut-cost-group {
             background: var(--system-grouped-background);
             padding: 20px;
@@ -358,11 +316,9 @@
             margin: 20px 0;
             border-left: 4px solid var(--system-orange);
         }
-
         .cut-cost-group {
             border-left-color: var(--system-green);
         }
-
         .kerf-input-row, .cost-input-row {
             display: flex;
             gap: 12px;
@@ -371,11 +327,9 @@
             margin: 16px 0;
             flex-wrap: wrap;
         }
-
         .kerf-input-wrapper input, .cost-input-wrapper input {
             width: 120px;
         }
-
         .calculate-btn {
             padding: 20px;
             border: none;
@@ -392,11 +346,9 @@
             position: relative;
             overflow: hidden;
         }
-
         .calculate-btn:active {
             transform: scale(0.98);
         }
-
         .calculate-btn::after {
             content: '';
             position: absolute;
@@ -410,11 +362,9 @@
             transform: scale(1, 1) translate(-50%);
             transform-origin: 50% 50%;
         }
-
         .calculate-btn:focus:not(:active)::after {
             animation: ripple 1s ease-out;
         }
-
         @keyframes ripple {
             0% {
                 transform: scale(0, 0);
@@ -425,7 +375,6 @@
                 opacity: 0;
             }
         }
-
         /* Visualization Section */
         .visualization-section {
             background: var(--system-background);
@@ -436,7 +385,6 @@
             position: sticky;
             top: 24px;
         }
-
         .visualization-section h2 {
             color: var(--system-label);
             margin-bottom: 20px;
@@ -444,7 +392,6 @@
             font-weight: 600;
             text-align: center;
         }
-
         .sheet-diagram {
             position: relative;
             background: var(--system-grouped-background);
@@ -455,7 +402,6 @@
             border-radius: var(--border-radius);
             overflow: hidden;
         }
-
         .piece {
             border: 1.5px solid var(--system-blue);
             position: absolute;
@@ -468,7 +414,6 @@
             box-sizing: border-box;
             background: linear-gradient(135deg, var(--system-blue), #5AC8FA);
         }
-
         .waste {
             border: 1.5px dashed var(--system-gray-3);
             background: rgba(142, 142, 147, 0.1);
@@ -480,13 +425,11 @@
             color: var(--system-gray-2);
             box-sizing: border-box;
         }
-
         .cut-line {
             position: absolute;
             background: rgba(255, 59, 48, 0.4);
             z-index: 5;
         }
-
         .diagram-label {
             text-align: center;
             color: var(--system-secondary-label);
@@ -494,7 +437,6 @@
             margin-top: 12px;
             line-height: 1.4;
         }
-
         .quick-summary {
             background: var(--system-grouped-background);
             padding: 20px;
@@ -502,7 +444,6 @@
             margin: 20px 0;
             border-left: 4px solid var(--system-blue);
         }
-
         .quick-summary h4 {
             color: var(--system-label);
             margin-bottom: 16px;
@@ -510,11 +451,9 @@
             font-size: 18px;
             font-weight: 600;
         }
-
         .summary-stats {
             margin-top: 16px;
         }
-
         .summary-item {
             display: flex;
             justify-content: space-between;
@@ -522,33 +461,27 @@
             border-bottom: 1px solid var(--system-secondary-background);
             font-size: 16px;
         }
-
         .summary-item:last-child {
             border-bottom: none;
         }
-
         .summary-label {
             font-weight: 500;
             color: var(--system-label);
         }
-
         .summary-value {
             font-weight: 600;
             color: var(--system-blue);
         }
-
         /* Results section */
         .results-section {
             display: none;
             grid-column: 1 / -1;
             margin-top: 24px;
         }
-
         .main-result {
             text-align: center;
             margin: 28px 0;
         }
-
         .pieces-count {
             font-size: 56px;
             font-weight: 300;
@@ -559,21 +492,18 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .result-label {
             font-size: 18px;
             color: var(--system-secondary-label);
             margin-bottom: 28px;
             font-weight: 400;
         }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             margin: 28px 0;
         }
-
         .stat-card {
             background: linear-gradient(135deg, var(--system-blue), #5AC8FA);
             color: white;
@@ -581,19 +511,16 @@
             border-radius: var(--border-radius);
             text-align: center;
         }
-
         .stat-value {
             font-size: 24px;
             font-weight: 300;
             margin: 8px 0;
         }
-
         .stat-label {
             font-size: 14px;
             opacity: 0.9;
             font-weight: 400;
         }
-
         .cost-summary {
             background: var(--system-grouped-background);
             padding: 24px;
@@ -601,7 +528,6 @@
             margin: 24px 0;
             border-left: 4px solid var(--system-green);
         }
-
         .cost-summary h3 {
             color: var(--system-label);
             margin-bottom: 20px;
@@ -609,7 +535,6 @@
             font-size: 20px;
             font-weight: 600;
         }
-
         .total-cost {
             background: linear-gradient(135deg, var(--system-green), #30B753);
             color: white;
@@ -618,25 +543,21 @@
             text-align: center;
             margin: 20px 0;
         }
-
         .total-cost-value {
             font-size: 32px;
             font-weight: 300;
             margin: 8px 0;
         }
-
         .total-cost-label {
             font-size: 16px;
             opacity: 0.9;
         }
-
         .cut-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin: 20px 0;
         }
-
         .cut-item {
             background: var(--system-background);
             padding: 16px;
@@ -645,13 +566,11 @@
             font-size: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-
         .loading-dots {
             display: none;
             text-align: center;
             margin: 20px 0;
         }
-
         .dot {
             display: inline-block;
             width: 8px;
@@ -661,10 +580,8 @@
             margin: 0 4px;
             animation: bounce 1.4s infinite ease-in-out;
         }
-
         .dot:nth-child(1) { animation-delay: -0.32s; }
         .dot:nth-child(2) { animation-delay: -0.16s; }
-
         @keyframes bounce {
             0%, 80%, 100% {
                 transform: scale(0);
@@ -673,7 +590,6 @@
                 transform: scale(1);
             }
         }
-
         /* Dark Mode Toggle */
         .dark-mode-toggle {
             display: flex;
@@ -683,19 +599,16 @@
             font-size: 14px;
             font-weight: 500;
         }
-
         .toggle-switch {
             position: relative;
             width: 44px;
             height: 24px;
         }
-
         .toggle-switch input {
             opacity: 0;
             width: 0;
             height: 0;
         }
-
         .toggle-slider {
             position: absolute;
             cursor: pointer;
@@ -707,7 +620,6 @@
             transition: .4s;
             border-radius: 24px;
         }
-
         .toggle-slider:before {
             position: absolute;
             content: "";
@@ -719,22 +631,18 @@
             transition: .4s;
             border-radius: 50%;
         }
-
         input:checked + .toggle-slider {
             background-color: var(--system-blue);
         }
-
         input:checked + .toggle-slider:before {
             transform: translateX(20px);
         }
-
-        /* Print Styles - OPTIMIZED SINGLE PAGE */
+        /* Print Styles - ACCURATE TEXT-BASED LAYOUT */
         @media print {
             @page {
                 margin: 0.25in;
-                size: A4 landscape;
+                size: A4;
             }
-            
             body {
                 background: white !important;
                 color: black !important;
@@ -742,7 +650,6 @@
                 font-size: 10pt;
                 font-family: Arial, sans-serif;
             }
-            
             .app-container {
                 max-width: none;
                 box-shadow: none;
@@ -751,7 +658,6 @@
                 margin: 0;
                 padding: 0;
             }
-            
             .app-header {
                 background: #007AFF !important;
                 -webkit-print-color-adjust: exact;
@@ -759,28 +665,23 @@
                 padding: 10px !important;
                 margin-bottom: 15px;
             }
-            
             .app-header h1 {
                 font-size: 20pt;
                 margin-bottom: 5px;
             }
-            
             .app-header .subtitle {
                 font-size: 12pt;
             }
-            
             .print-btn, .calculate-btn, .input-section, .unit-selection, 
             .kerf-input-group, .cut-cost-group, .header-controls,
             .sheet-size-group, .unit-system-toggle, .visualization-section,
             .results-section, .loading-dots {
                 display: none !important;
             }
-            
             .main-content {
                 display: block !important;
                 padding: 0;
             }
-            
             /* Print Layout */
             .print-layout {
                 display: grid !important;
@@ -789,61 +690,26 @@
                 align-items: start;
                 margin-top: 15px;
             }
-            
             .print-diagram-container {
                 text-align: center;
                 padding: 10px;
             }
-            
             .print-diagram {
-                position: relative;
                 background: #f8f9fa;
                 border: 1px solid #ddd;
-                width: 110px;
-                height: 220px;
+                padding: 6px;
                 margin: 0 auto 10px;
+                font-family: monospace;
+                font-size: 8pt;
+                line-height: 1.2;
+                text-align: left;
+                white-space: pre;
+                overflow: hidden;
             }
-            
-            .print-piece {
-                border: 1px solid #007AFF;
-                position: absolute;
-                background: #007AFF;
-                box-sizing: border-box;
-                font-size: 6px;
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .print-waste {
-                border: 1px dashed #666;
-                background: rgba(200,200,200,0.3);
-                position: absolute;
-                box-sizing: border-box;
-                font-size: 5px;
-                color: #666;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
             .print-details {
                 background: white;
                 padding: 10px;
             }
-            
-            .print-summary-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                margin: 15px 0;
-            }
-            
-            .print-section {
-                margin-bottom: 15px;
-            }
-            
             .print-section h3 {
                 background: #007AFF;
                 color: white;
@@ -852,43 +718,33 @@
                 font-size: 11pt;
                 border-radius: 4px;
             }
-            
             .print-data {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 8px 15px;
                 font-size: 9pt;
             }
-            
             .print-data div {
                 padding: 4px 0;
                 border-bottom: 1px solid #eee;
             }
-            
             .print-data .label {
                 font-weight: bold;
                 color: #333;
             }
-            
             .print-data .value {
                 text-align: right;
                 color: #007AFF;
                 font-weight: 600;
             }
-            
             .cut-list {
                 font-size: 9pt;
+                margin-top: 6pt;
+                padding-left: 12pt;
             }
-            
-            .cut-list ul {
-                margin: 5px 0;
-                padding-left: 20px;
+            .cut-list::before {
+                content: "• ";
             }
-            
-            .cut-list li {
-                margin: 2px 0;
-            }
-            
             .print-footer {
                 text-align: center;
                 margin-top: 20px;
@@ -899,102 +755,81 @@
                 grid-column: 1 / -1;
             }
         }
-
-        /* Hide print elements by default - FIXED */
+        /* Hide print elements by default */
         .print-layout {
             display: none;
         }
-
         /* Mobile-first responsive design */
         @media (max-width: 480px) {
             body {
                 padding: 12px;
             }
-            
             .app-header {
                 padding: 28px 20px;
             }
-            
             .app-header h1 {
                 font-size: 24px;
             }
-            
             .header-controls {
                 position: static;
                 justify-content: center;
                 margin-top: 15px;
                 flex-wrap: wrap;
             }
-            
             .main-content {
                 padding: 20px;
                 grid-template-columns: 1fr;
             }
-            
             .input-section, .visualization-section {
                 padding: 20px;
             }
-            
             .sheet-size-options {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
             .input-row {
                 flex-direction: column;
                 gap: 12px;
             }
-            
             input {
                 width: 100%;
                 max-width: 200px;
                 padding: 16px;
                 font-size: 18px;
             }
-            
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
-            
             .cut-info {
                 grid-template-columns: 1fr;
                 gap: 10px;
             }
-            
             .pieces-count {
                 font-size: 48px;
             }
-            
             .total-cost-value {
                 font-size: 28px;
             }
-            
             .stat-value {
                 font-size: 22px;
             }
         }
-
         @media (min-width: 768px) {
             .app-header {
                 padding: 40px 32px;
             }
-            
             .app-header h1 {
                 font-size: 32px;
             }
-            
             .main-content {
                 padding: 32px;
             }
-            
             .input-section, .visualization-section {
                 padding: 32px;
             }
-            
             .pieces-count {
                 font-size: 64px;
             }
-            
             .total-cost-value {
                 font-size: 36px;
             }
@@ -1018,12 +853,10 @@
                 </div>
             </div>
         </div>
-
         <div class="main-content">
             <!-- Input Section (Left) -->
             <div class="input-section">
                 <h2>Enter Piece Dimensions</h2>
-                
                 <!-- Sheet Size Picker -->
                 <div class="sheet-size-group">
                     <div class="input-label">Sheet Size</div>
@@ -1041,16 +874,13 @@
                         <div style="font-weight: 600; color: var(--system-label);">inches</div>
                     </div>
                 </div>
-                
                 <div class="input-group">
                     <div class="input-label">Piece Size</div>
-                    
                     <!-- Metric/Imperial Toggle -->
                     <div class="unit-system-toggle">
                         <button class="toggle-btn active" id="imperialBtn" onclick="setUnitSystem('imperial')">Imperial</button>
                         <button class="toggle-btn" id="metricBtn" onclick="setUnitSystem('metric')">Metric</button>
                     </div>
-                    
                     <!-- Unit Selection with Circular Radio Buttons -->
                     <div class="unit-selection">
                         <label class="unit-option">
@@ -1070,7 +900,6 @@
                             <span class="unit-label" id="mmLabel">Millimeters</span>
                         </label>
                     </div>
-                    
                     <div class="input-row">
                         <input type="text" id="pieceWidth" value="17" placeholder="Width" autocomplete="off" inputmode="decimal">
                         <div class="dimension-separator">×</div>
@@ -1080,7 +909,6 @@
                         Enter measurements - the calculator will automatically convert based on your selected unit
                     </div>
                 </div>
-
                 <div class="kerf-input-group">
                     <div class="input-label">🔪 Blade Kerf (Cut Width)</div>
                     <div class="kerf-input-row">
@@ -1094,7 +922,6 @@
                         Thin-kerf blades are typically 0.098"
                     </div>
                 </div>
-
                 <div class="cut-cost-group">
                     <div class="input-label">💰 Cutting Cost Rate</div>
                     <div class="cost-input-row">
@@ -1107,18 +934,15 @@
                         Every cut line is charged, including cuts through waste areas
                     </div>
                 </div>
-
                 <div class="loading-dots" id="loadingDots">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                 </div>
-
                 <button class="calculate-btn" id="calculateBtn">
                     🚀 Calculate Cuts & Cost
                 </button>
             </div>
-
             <!-- Visualization Section (Right Side) -->
             <div class="visualization-section">
                 <h2>Sheet Layout</h2>
@@ -1126,7 +950,6 @@
                 <div class="diagram-label" id="diagramLabel">
                     Enter dimensions to see cutting layout
                 </div>
-                
                 <div class="quick-summary" id="quickSummary">
                     <h4>📊 Quick Summary</h4>
                     <div class="summary-stats" id="summaryStats">
@@ -1162,14 +985,12 @@
                     </div>
                 </div>
             </div>
-
             <!-- Print Layout (Hidden until print) -->
             <div class="print-layout" id="printLayout">
                 <div class="print-diagram-container">
                     <div class="print-diagram" id="pDiagram"></div>
                     <div><strong>Sheet:</strong> <span id="pSheetSize">48" × 96"</span></div>
                 </div>
-                
                 <div class="print-details">
                     <div class="print-section">
                         <h3>Project Summary</h3>
@@ -1182,65 +1003,48 @@
                             <div class="label">Cost per Piece:</div><div class="value" id="pPcCost">2.80 MVR</div>
                         </div>
                     </div>
-                    
-                    <div class="print-summary-grid">
-                        <div class="print-section">
-                            <h3>Cutting Details</h3>
-                            <div class="print-data">
-                                <div class="label">Total Cuts:</div><div class="value" id="pCuts">18</div>
-                                <div class="label">Cut Length:</div><div class="value" id="pLen">105.6 ft</div>
-                                <div class="label">Blade Kerf:</div><div class="value" id="pKerf">0.125"</div>
-                                <div class="label">Cut Rate:</div><div class="value" id="pRate">4.0 MVR/ft</div>
-                            </div>
+                    <div class="print-section">
+                        <h3>Cutting Details</h3>
+                        <div class="print-data">
+                            <div class="label">Total Cuts:</div><div class="value" id="pCuts">18</div>
+                            <div class="label">Cut Length:</div><div class="value" id="pLen">105.6 ft</div>
+                            <div class="label">Blade Kerf:</div><div class="value" id="pKerf">0.125"</div>
+                            <div class="label">Cut Rate:</div><div class="value" id="pRate">4.0 MVR/ft</div>
                         </div>
-                        
-                        <div class="print-section">
-                            <h3>Cut List</h3>
-                            <div class="cut-list">
-                                <div><strong>Rip Cuts:</strong></div>
-                                <ul id="pRip"></ul>
-                                <div><strong>Cross Cuts:</strong></div>
-                                <ul id="pCross"></ul>
-                            </div>
-                        </div>
+                        <h4 style="margin-top: 12px;">Cut List</h4>
+                        <div class="cut-list" id="pRipList">—</div>
+                        <div class="cut-list" id="pCrossList">—</div>
                     </div>
-                    
                     <div class="print-footer">
                         Generated on <span id="pDate"></span> • Plywood Cut Calculator
                     </div>
                 </div>
             </div>
-
             <!-- Detailed Results Section (Full width below) -->
             <div id="resultsSection" class="results-section">
                 <!-- Detailed results will be populated here -->
             </div>
         </div>
     </div>
-
     <script>
         // Sheet dimensions - now dynamic
         let SHEET_WIDTH = 48; // inches
         let SHEET_LENGTH = 96; // inches
-        
         let calculationTimeout;
         let currentUnit = 'inches'; // Default unit
         let currentResult = null;
         let currentUnitSystem = 'imperial'; // 'imperial' or 'metric'
         let isDarkMode = false;
-
         // Sheet size selection
         function setupSheetSizePicker() {
             const buttons = document.querySelectorAll('.sheet-size-btn');
             const customInputs = document.getElementById('customSheetInputs');
-            
             buttons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     // Remove active class from all buttons
                     buttons.forEach(b => b.classList.remove('active'));
                     // Add active class to clicked button
                     this.classList.add('active');
-                    
                     const size = this.dataset.size;
                     if (size === 'custom') {
                         customInputs.classList.add('active');
@@ -1252,11 +1056,9 @@
                         // Set sheet dimensions
                         [SHEET_WIDTH, SHEET_LENGTH] = size.split(',').map(Number);
                     }
-                    
                     scheduleCalculation();
                 });
             });
-            
             // Listen for custom input changes
             document.getElementById('customSheetWidth').addEventListener('input', function() {
                 if (document.querySelector('.sheet-size-btn[data-size="custom"]').classList.contains('active')) {
@@ -1264,7 +1066,6 @@
                     scheduleCalculation();
                 }
             });
-            
             document.getElementById('customSheetLength').addEventListener('input', function() {
                 if (document.querySelector('.sheet-size-btn[data-size="custom"]').classList.contains('active')) {
                     SHEET_LENGTH = parseFloat(this.value) || 96;
@@ -1272,15 +1073,12 @@
                 }
             });
         }
-
         // Unit system toggle (Imperial/Metric)
         function setUnitSystem(system) {
             currentUnitSystem = system;
-            
             // Update button states
             document.getElementById('imperialBtn').classList.toggle('active', system === 'imperial');
             document.getElementById('metricBtn').classList.toggle('active', system === 'metric');
-            
             // Update unit labels based on system
             if (system === 'metric') {
                 document.getElementById('inchesLabel').textContent = 'Inches';
@@ -1299,10 +1097,8 @@
                 document.getElementById('costUnit').textContent = 'MVR per foot';
                 document.getElementById('unitHint').textContent = 'Enter measurements - calculator will convert automatically';
             }
-            
             scheduleCalculation();
         }
-
         // Format display value based on unit system
         function formatDisplayValue(inches, forInput = false) {
             if (currentUnitSystem === 'metric') {
@@ -1334,7 +1130,6 @@
                 }
             }
         }
-
         // Dark mode toggle
         function toggleDarkMode() {
             isDarkMode = !isDarkMode;
@@ -1346,14 +1141,12 @@
             // Save preference
             localStorage.setItem('darkMode', isDarkMode);
         }
-
         // Share functionality
         function shareCalculation() {
             if (!currentResult) {
                 alert("Please calculate a cutting plan first.");
                 return;
             }
-            
             const params = {
                 w: document.getElementById('pieceWidth').value,
                 l: document.getElementById('pieceLength').value,
@@ -1363,10 +1156,8 @@
                 u: currentUnit,
                 sys: currentUnitSystem
             };
-            
             const hash = btoa(JSON.stringify(params));
             const url = window.location.href.split('#')[0] + '#' + hash;
-            
             // Copy to clipboard
             navigator.clipboard.writeText(url).then(() => {
                 alert("Link copied to clipboard! Share this URL to preserve your calculation.");
@@ -1375,26 +1166,22 @@
                 prompt("Copy this URL to share:", url);
             });
         }
-
         // Load from URL hash
         function loadFromHash() {
             if (window.location.hash) {
                 try {
                     const hash = window.location.hash.substring(1);
                     const params = JSON.parse(atob(hash));
-                    
                     // Restore values
                     document.getElementById('pieceWidth').value = params.w || '17';
                     document.getElementById('pieceLength').value = params.l || '17';
                     document.getElementById('bladeKerf').value = params.k || '0.125';
                     document.getElementById('cutCostRate').value = params.r || '4';
-                    
                     // Restore sheet size
                     if (params.s) {
                         const [width, length] = params.s.split(',').map(Number);
                         SHEET_WIDTH = width;
                         SHEET_LENGTH = length;
-                        
                         // Find matching button or use custom
                         const buttons = document.querySelectorAll('.sheet-size-btn');
                         let found = false;
@@ -1404,7 +1191,6 @@
                                 found = true;
                             }
                         });
-                        
                         if (!found) {
                             // Use custom
                             document.querySelector('.sheet-size-btn[data-size="custom"]').click();
@@ -1412,27 +1198,22 @@
                             document.getElementById('customSheetLength').value = length;
                         }
                     }
-                    
                     // Restore unit system
                     if (params.sys) {
                         setUnitSystem(params.sys);
                     }
-                    
                     // Restore unit
                     if (params.u) {
                         currentUnit = params.u;
                         document.querySelector(`.unit-radio[value="${params.u}"]`).checked = true;
                     }
-                    
                     // Recalculate
                     setTimeout(calculatePieces, 100);
-                    
                 } catch (e) {
                     console.error('Error loading from URL:', e);
                 }
             }
         }
-
         // Update current unit when radio buttons change
         document.querySelectorAll('.unit-radio').forEach(radio => {
             radio.addEventListener('change', function() {
@@ -1440,17 +1221,13 @@
                 scheduleCalculation();
             });
         });
-
         // Smart unit conversion based on selected unit
         function parseMeasurement(input) {
             if (!input) return 0;
-            
             input = input.toString().toLowerCase().trim();
-            
             // Extract numeric value
             const numericValue = parseFloat(input.replace(/[^\d.-]/g, ''));
             if (isNaN(numericValue)) return 0;
-            
             // Convert to inches based on selected unit
             switch(currentUnit) {
                 case 'feet':
@@ -1464,18 +1241,15 @@
                     return numericValue;
             }
         }
-
         // Debounced calculation function
         function scheduleCalculation() {
             clearTimeout(calculationTimeout);
             document.getElementById('loadingDots').style.display = 'block';
-            
             calculationTimeout = setTimeout(() => {
                 calculatePieces();
                 document.getElementById('loadingDots').style.display = 'none';
             }, 500);
         }
-
         // Advanced cutting algorithm with kerf compensation and cost calculation
         function calculateOptimalCuts(pieceWidth, pieceLength, bladeKerf, cutCostRate) {
             // Try both orientations
@@ -1483,48 +1257,37 @@
                 { width: pieceWidth, length: pieceLength, rotated: false },
                 { width: pieceLength, length: pieceWidth, rotated: true }
             ];
-
             let bestResult = null;
-
             orientations.forEach(orientation => {
                 // Account for kerf in calculations
                 const effectivePieceWidth = orientation.width + bladeKerf;
                 const effectivePieceLength = orientation.length + bladeKerf;
-
                 // Calculate pieces that fit
                 const piecesX = Math.floor((SHEET_WIDTH + bladeKerf) / effectivePieceWidth);
                 const piecesY = Math.floor((SHEET_LENGTH + bladeKerf) / effectivePieceLength);
                 const totalPieces = piecesX * piecesY;
-
                 if (totalPieces > 0) {
                     // Calculate ALL cuts needed (including through waste areas)
                     // Rip cuts: full-length cuts across the entire sheet width
                     const totalRipCuts = Math.ceil(SHEET_WIDTH / orientation.width) - 1;
-                    
                     // Cross cuts: for each strip, full-width cuts across the entire sheet length
                     const totalCrossCuts = piecesX > 0 ? (Math.ceil(SHEET_LENGTH / orientation.length) - 1) * piecesX : 0;
-                    
                     const totalCuts = totalRipCuts + totalCrossCuts;
-
                     // Calculate cut lengths (convert to feet for costing)
                     const ripCutLengthFt = SHEET_LENGTH / 12; // Full sheet length in feet
                     const crossCutLengthFt = SHEET_WIDTH / 12; // Full sheet width in feet
-
                     // Calculate costs
                     const ripCutCost = totalRipCuts * ripCutLengthFt * cutCostRate;
                     const crossCutCost = totalCrossCuts * crossCutLengthFt * cutCostRate;
                     const totalCutCost = ripCutCost + crossCutCost;
                     const costPerPiece = totalCutCost / totalPieces;
-
                     // Calculate actual material usage (without kerf for area calculation)
                     const actualPieceArea = pieceWidth * pieceLength;
                     const totalUsedArea = totalPieces * actualPieceArea;
                     const sheetArea = SHEET_WIDTH * SHEET_LENGTH;
                     const usagePercent = (totalUsedArea / sheetArea) * 100;
-
                     // Calculate kerf waste
                     const kerfWasteArea = totalCuts * bladeKerf * Math.max(pieceWidth, pieceLength);
-
                     const result = {
                         totalPieces,
                         piecesX,
@@ -1546,21 +1309,17 @@
                         actualPieceWidth: pieceWidth,
                         actualPieceLength: pieceLength
                     };
-
                     if (!bestResult || totalPieces > bestResult.totalPieces) {
                         bestResult = result;
                     }
                 }
             });
-
             return bestResult;
         }
-
         // Update quick summary in visualization section
         function updateQuickSummary(result) {
             const usagePercent = result.usagePercent.toFixed(1);
             const wastePercent = (100 - result.usagePercent).toFixed(1);
-            
             document.getElementById('summaryStats').innerHTML = `
                 <div class="summary-item">
                     <span class="summary-label">Pieces:</span>
@@ -1587,23 +1346,19 @@
                     <span class="summary-value">${wastePercent}%</span>
                 </div>
             `;
-            
             // Format sheet dimensions for display
             const sheetDisplay = formatDisplayValue(SHEET_WIDTH) + ' × ' + formatDisplayValue(SHEET_LENGTH);
-            
             document.getElementById('diagramLabel').innerHTML = `
                 Sheet: ${sheetDisplay} | Pieces: ${result.totalPieces}${result.orientation === 'rotated' ? ' (rotated)' : ''}<br>
                 Efficiency: ${usagePercent}% | Cost: ${result.totalCutCost.toFixed(2)} MVR
             `;
         }
-
-        // FIXED Print function
+        // IMPROVED Print function with accurate text-based schematic
         function printReport() {
             if (!currentResult) { 
                 alert('Nothing to print – run a calculation first.'); 
                 return; 
             }
-
             // Fill the one-page template
             const r = currentResult;
             document.getElementById('pDate').textContent = new Date().toLocaleString();
@@ -1618,100 +1373,128 @@
             document.getElementById('pLen').textContent = (r.totalRipCuts * r.ripCutLengthFt + r.totalCrossCuts * r.crossCutLengthFt).toFixed(1);
             document.getElementById('pWaste').textContent = (100 - r.usagePercent).toFixed(1);
             document.getElementById('pSheetSize').textContent = `${SHEET_WIDTH}" × ${SHEET_LENGTH}"`;
-
-            // Build cut-list bullets
-            const ripUl = document.getElementById('pRip');   
-            ripUl.innerHTML = '';
-            const crossUl = document.getElementById('pCross'); 
-            crossUl.innerHTML = '';
-            
+            // Build cut lists as text
+            const ripList = [];
             for (let i = 1; i <= r.totalRipCuts; i++) {
-                ripUl.insertAdjacentHTML('beforeend', `<li>${(i * r.finalWidth).toFixed(1)}″</li>`);
+                ripList.push(`${(i * r.finalWidth).toFixed(1)}″`);
             }
-            
-            for (let i = 1; i <= Math.ceil(SHEET_LENGTH / r.finalLength) - 1; i++) {
-                crossUl.insertAdjacentHTML('beforeend', `<li>${(i * r.finalLength).toFixed(1)}″</li>`);
-            }
+            document.getElementById('pRipList').textContent = ripList.length ? ripList.join(', ') : 'None';
 
-            // Mini-diagram (same scale maths as live one, just smaller)
-            const pDia = document.getElementById('pDiagram'); 
+            const crossList = [];
+            for (let i = 1; i <= Math.ceil(SHEET_LENGTH / r.finalLength) - 1; i++) {
+                crossList.push(`${(i * r.finalLength).toFixed(1)}″`);
+            }
+            document.getElementById('pCrossList').textContent = crossList.length ? crossList.join(', ') : 'None';
+
+            // Build accurate text-based schematic for print
+            const pDia = document.getElementById('pDiagram');
             pDia.innerHTML = '';
-            const scale = 110 / SHEET_WIDTH;
-            
+            let schematic = '';
+
+            // Top border
+            schematic += '┌';
             for (let x = 0; x < r.piecesX; x++) {
-                for (let y = 0; y < r.piecesY; y++) {
-                    const div = document.createElement('div');
-                    div.className = 'print-piece';
-                    div.style.width = (r.finalWidth * scale) + 'px';
-                    div.style.height = (r.finalLength * scale) + 'px';
-                    div.style.left = (x * r.finalWidth * scale) + 'px';
-                    div.style.top = (y * r.finalLength * scale) + 'px';
-                    div.textContent = (x * r.piecesY + y + 1);
-                    pDia.appendChild(div);
+                schematic += '──────';
+                if (x < r.piecesX - 1) schematic += '┬';
+            }
+            // Add waste column if exists
+            if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                schematic += '┬──────';
+            }
+            schematic += '┐\n';
+
+            // Rows
+            for (let y = 0; y < r.piecesY; y++) {
+                schematic += '│';
+                for (let x = 0; x < r.piecesX; x++) {
+                    const num = x * r.piecesY + y + 1;
+                    schematic += ` ${num.toString().padStart(2, ' ')} │`;
+                }
+                // Waste column
+                if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                    schematic += ' WASTE│';
+                }
+                schematic += '\n';
+                
+                // Middle border (except after last row)
+                if (y < r.piecesY - 1) {
+                    schematic += '├';
+                    for (let x = 0; x < r.piecesX; x++) {
+                        schematic += '──────';
+                        if (x < r.piecesX - 1) schematic += '┼';
+                    }
+                    if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                        schematic += '┼──────';
+                    }
+                    schematic += '┤\n';
                 }
             }
-            
-            // Waste areas
-            const wr = SHEET_WIDTH - r.piecesX * r.finalWidth;
-            const wb = SHEET_LENGTH - r.piecesY * r.finalLength;
-            
-            if (wr > 0) { 
-                const w = document.createElement('div'); 
-                w.className = 'print-waste'; 
-                w.style.width = (wr * scale) + 'px'; 
-                w.style.height = (SHEET_LENGTH * scale) + 'px'; 
-                w.style.left = (r.piecesX * r.finalWidth * scale) + 'px'; 
-                w.style.top = '0'; 
-                w.textContent = 'WASTE';
-                pDia.appendChild(w); 
+
+            // Bottom waste row (if exists)
+            if (SHEET_LENGTH > r.piecesY * r.finalLength) {
+                // Separator
+                schematic += '├';
+                for (let x = 0; x < r.piecesX; x++) {
+                    schematic += '──────';
+                    if (x < r.piecesX - 1) schematic += '┼';
+                }
+                if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                    schematic += '┼──────';
+                }
+                schematic += '┤\n';
+                
+                // Waste row
+                schematic += '│';
+                for (let x = 0; x < r.piecesX; x++) {
+                    schematic += ' WASTE│';
+                }
+                if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                    schematic += ' WASTE│';
+                }
+                schematic += '\n';
             }
-            
-            if (wb > 0) { 
-                const w = document.createElement('div'); 
-                w.className = 'print-waste'; 
-                w.style.width = (SHEET_WIDTH * scale) + 'px'; 
-                w.style.height = (wb * scale) + 'px'; 
-                w.style.left = '0'; 
-                w.style.top = (r.piecesY * r.finalLength * scale) + 'px'; 
-                w.textContent = 'WASTE';
-                pDia.appendChild(w); 
+
+            // Bottom border
+            schematic += '└';
+            for (let x = 0; x < r.piecesX; x++) {
+                schematic += '──────';
+                if (x < r.piecesX - 1) schematic += '┴';
             }
+            if (SHEET_WIDTH > r.piecesX * r.finalWidth) {
+                schematic += '┴──────';
+            }
+            schematic += '┘';
+
+            pDia.textContent = schematic;
 
             // Show print layout temporarily
             const printLayout = document.getElementById('printLayout');
             printLayout.style.display = 'grid';
-
             // Use a small timeout to ensure the layout is visible before print dialog
             setTimeout(() => {
                 window.print();
-                
                 // Hide print layout after printing
                 setTimeout(() => {
                     printLayout.style.display = 'none';
                 }, 100);
             }, 100);
         }
-
         // Main calculation function
         function calculatePieces() {
             const widthInput = document.getElementById('pieceWidth').value;
             const lengthInput = document.getElementById('pieceLength').value;
             const bladeKerf = parseFloat(document.getElementById('bladeKerf').value) || 0.125;
             const cutCostRate = parseFloat(document.getElementById('cutCostRate').value) || 4;
-            
             if (!widthInput || !lengthInput) {
                 alert('Please enter both width and length');
                 return;
             }
-
             const pieceWidth = parseMeasurement(widthInput);
             const pieceLength = parseMeasurement(lengthInput);
-            
             if (pieceWidth <= 0 || pieceLength <= 0) {
                 alert('Please enter valid positive numbers');
                 return;
             }
-
             if (pieceWidth > SHEET_WIDTH || pieceLength > SHEET_LENGTH) {
                 const resultsSection = document.getElementById('resultsSection');
                 resultsSection.style.display = 'block';
@@ -1734,35 +1517,28 @@
                 `;
                 return;
             }
-
             // Use advanced cutting algorithm
             const result = calculateOptimalCuts(pieceWidth, pieceLength, bladeKerf, cutCostRate);
-
             if (!result) {
                 alert("No pieces can be cut from this sheet with the given dimensions.");
                 return;
             }
-
             // Store result for printing
             currentResult = result;
-
             // Update quick summary and visualization
             updateQuickSummary(result);
             createPiecesDiagram(result);
-
             // Calculate waste percentages
             const sheetArea = SHEET_WIDTH * SHEET_LENGTH;
             const kerfLossPercent = ((result.kerfWasteArea / sheetArea) * 100).toFixed(1);
             const wastePercent = (100 - result.usagePercent).toFixed(1);
             const usagePercent = result.usagePercent.toFixed(1);
-
             // Build detailed results HTML
             const resultsHTML = `
                 <div class="main-result">
                     <div class="pieces-count">${result.totalPieces}</div>
                     <div class="result-label">pieces fit on one ${formatDisplayValue(SHEET_WIDTH)} × ${formatDisplayValue(SHEET_LENGTH)} sheet</div>
                 </div>
-
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-label">Material Used</div>
@@ -1777,7 +1553,6 @@
                         <div class="stat-value">${kerfLossPercent}%</div>
                     </div>
                 </div>
-
                 <div class="cost-summary">
                     <h3>💰 Cutting Cost Breakdown</h3>
                     <div class="total-cost">
@@ -1785,7 +1560,6 @@
                         <div class="total-cost-value">${result.totalCutCost.toFixed(2)} MVR</div>
                         <div class="total-cost-label">Per piece: ${result.costPerPiece.toFixed(2)} MVR</div>
                     </div>
-                    
                     <div class="cut-info">
                         <div class="cut-item">
                             <strong>Rip Cuts</strong><br>
@@ -1810,26 +1584,20 @@
                     </div>
                 </div>
             `;
-
             // Display detailed results
             const resultsSection = document.getElementById('resultsSection');
             resultsSection.innerHTML = resultsHTML;
             resultsSection.style.display = 'block';
         }
-
         function createPiecesDiagram(result) {
             const diagram = document.getElementById('piecesDiagram');
             if (!diagram) return;
-            
             diagram.innerHTML = '';
-
             // Set diagram size
             const maxWidth = 360;
             const scale = maxWidth / SHEET_WIDTH;
-            
             diagram.style.width = (SHEET_WIDTH * scale) + 'px';
             diagram.style.height = (SHEET_LENGTH * scale) + 'px';
-
             // Draw ALL cut lines (including through waste areas)
             // Rip cuts (vertical - full length)
             for (let i = 1; i <= result.totalRipCuts; i++) {
@@ -1841,7 +1609,6 @@
                 cutLine.style.top = '0';
                 diagram.appendChild(cutLine);
             }
-
             // Cross cuts (horizontal - full width)
             for (let strip = 0; strip < result.piecesX; strip++) {
                 for (let i = 1; i <= Math.ceil(SHEET_LENGTH / result.finalLength) - 1; i++) {
@@ -1854,7 +1621,6 @@
                     diagram.appendChild(cutLine);
                 }
             }
-
             // Draw pieces
             let pieceNumber = 1;
             for (let x = 0; x < result.piecesX; x++) {
@@ -1871,7 +1637,6 @@
                     pieceNumber++;
                 }
             }
-
             // Draw waste areas
             const wasteRightWidth = SHEET_WIDTH - (result.piecesX * result.finalWidth);
             if (wasteRightWidth > 0) {
@@ -1884,7 +1649,6 @@
                 wasteRight.textContent = 'WASTE';
                 diagram.appendChild(wasteRight);
             }
-
             const wasteBottomHeight = SHEET_LENGTH - (result.piecesY * result.finalLength);
             if (wasteBottomHeight > 0) {
                 const wasteBottom = document.createElement('div');
@@ -1897,38 +1661,31 @@
                 diagram.appendChild(wasteBottom);
             }
         }
-
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             // Setup new features
             setupSheetSizePicker();
-            
             // Load dark mode preference
             const savedDarkMode = localStorage.getItem('darkMode') === 'true';
             if (savedDarkMode) {
                 document.getElementById('darkModeToggle').checked = true;
                 toggleDarkMode();
             }
-            
             // Load from URL hash if present
             loadFromHash();
-            
             // Button click event
             document.getElementById('calculateBtn').addEventListener('click', function(e) {
                 e.preventDefault();
                 calculatePieces();
             });
-
             // Input events for auto-calculation
             document.getElementById('pieceWidth').addEventListener('input', scheduleCalculation);
             document.getElementById('pieceLength').addEventListener('input', scheduleCalculation);
             document.getElementById('bladeKerf').addEventListener('input', scheduleCalculation);
             document.getElementById('cutCostRate').addEventListener('input', scheduleCalculation);
-
             // Auto-calculate on load
             setTimeout(calculatePieces, 600);
         });
-
         // Prevent form submission on enter key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
