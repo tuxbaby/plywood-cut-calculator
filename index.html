@@ -1,3 +1,12 @@
+Below is the **complete, single-file** calculator with:
+
+- Both **“Total Cuts”** and **“Total Cut (ft)”** in the quick-summary  
+- **Smaller circular radio buttons** (30 px instead of 44 px)  
+- Every previous feature intact (dark mode, share URL, print, etc.)
+
+Copy / paste and you're done.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +41,6 @@
             --shadow: 0 4px 24px rgba(0,0,0,0.08);
             --shadow-elevated: 0 12px 48px rgba(0,0,0,0.15);
         }
-        /* Dark mode variables */
         .dark-mode {
             --system-background: #000000;
             --system-grouped-background: #1C1C1E;
@@ -118,7 +126,6 @@
                 margin-top: 15px;
             }
         }
-        /* Input Section */
         .input-section {
             background: var(--system-background);
             border-radius: var(--border-radius-lg);
@@ -155,7 +162,6 @@
             font-size: 17px;
             text-align: center;
         }
-        /* Sheet Size Picker */
         .sheet-size-group {
             background: var(--system-grouped-background);
             padding: 20px;
@@ -199,7 +205,6 @@
         .custom-sheet-inputs input {
             width: 100px;
         }
-        /* Unit selection with circular radio buttons */
         .unit-selection {
             display: flex;
             justify-content: center;
@@ -214,11 +219,12 @@
             align-items: center;
             cursor: pointer;
         }
+        /* SMALLER circular radio buttons */
         .unit-radio {
             appearance: none;
             -webkit-appearance: none;
-            width: 44px;
-            height: 44px;
+            width: 30px;
+            height: 30px;
             border: 2px solid var(--system-gray-3);
             border-radius: 50%;
             background: transparent;
@@ -234,14 +240,14 @@
         }
         .unit-radio:checked::after {
             content: '';
-            width: 18px;
-            height: 18px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: white;
         }
         .unit-label {
-            margin-top: 8px;
-            font-size: 14px;
+            margin-top: 6px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--system-secondary-label);
             transition: color 0.3s ease;
@@ -250,7 +256,6 @@
             color: var(--system-blue);
             font-weight: 600;
         }
-        /* Metric/Imperial Toggle */
         .unit-system-toggle {
             display: flex;
             justify-content: center;
@@ -375,7 +380,6 @@
                 opacity: 0;
             }
         }
-        /* Visualization Section */
         .visualization-section {
             background: var(--system-background);
             border-radius: var(--border-radius-lg);
@@ -472,7 +476,6 @@
             font-weight: 600;
             color: var(--system-blue);
         }
-        /* Results section */
         .results-section {
             display: none;
             grid-column: 1 / -1;
@@ -590,7 +593,6 @@
                 transform: scale(1);
             }
         }
-        /* Dark Mode Toggle */
         .dark-mode-toggle {
             display: flex;
             align-items: center;
@@ -672,7 +674,7 @@
             .app-header .subtitle {
                 font-size: 12pt;
             }
-            .print-btn, .calculate-btn, .input-section, .unit-selection, 
+            .print-btn, .calculate-btn, .input-section, .unit-selection,
             .kerf-input-group, .cut-cost-group, .header-controls,
             .sheet-size-group, .unit-system-toggle, .visualization-section,
             .results-section, .loading-dots {
@@ -966,6 +968,10 @@
                             <span class="summary-value">-</span>
                         </div>
                         <div class="summary-item">
+                            <span class="summary-label">Total Cut (ft):</span>
+                            <span class="summary-value">-</span>
+                        </div>
+                        <div class="summary-item">
                             <span class="summary-label">Cut Cost:</span>
                             <span class="summary-value">-</span>
                         </div>
@@ -1026,6 +1032,7 @@
             </div>
         </div>
     </div>
+
     <script>
         // Sheet dimensions - now dynamic
         let SHEET_WIDTH = 48; // inches
@@ -1035,6 +1042,7 @@
         let currentResult = null;
         let currentUnitSystem = 'imperial'; // 'imperial' or 'metric'
         let isDarkMode = false;
+
         // Sheet size selection
         function setupSheetSizePicker() {
             const buttons = document.querySelectorAll('.sheet-size-btn');
@@ -1073,6 +1081,7 @@
                 }
             });
         }
+
         // Unit system toggle (Imperial/Metric)
         function setUnitSystem(system) {
             currentUnitSystem = system;
@@ -1099,6 +1108,7 @@
             }
             scheduleCalculation();
         }
+
         // Format display value based on unit system
         function formatDisplayValue(inches, forInput = false) {
             if (currentUnitSystem === 'metric') {
@@ -1130,6 +1140,7 @@
                 }
             }
         }
+
         // Dark mode toggle
         function toggleDarkMode() {
             isDarkMode = !isDarkMode;
@@ -1141,6 +1152,7 @@
             // Save preference
             localStorage.setItem('darkMode', isDarkMode);
         }
+
         // Share functionality
         function shareCalculation() {
             if (!currentResult) {
@@ -1166,6 +1178,7 @@
                 prompt("Copy this URL to share:", url);
             });
         }
+
         // Load from URL hash
         function loadFromHash() {
             if (window.location.hash) {
@@ -1214,6 +1227,7 @@
                 }
             }
         }
+
         // Update current unit when radio buttons change
         document.querySelectorAll('.unit-radio').forEach(radio => {
             radio.addEventListener('change', function() {
@@ -1221,6 +1235,7 @@
                 scheduleCalculation();
             });
         });
+
         // Smart unit conversion based on selected unit
         function parseMeasurement(input) {
             if (!input) return 0;
@@ -1241,6 +1256,7 @@
                     return numericValue;
             }
         }
+
         // Debounced calculation function
         function scheduleCalculation() {
             clearTimeout(calculationTimeout);
@@ -1250,6 +1266,7 @@
                 document.getElementById('loadingDots').style.display = 'none';
             }, 500);
         }
+
         // Advanced cutting algorithm with kerf compensation and cost calculation
         function calculateOptimalCuts(pieceWidth, pieceLength, bladeKerf, cutCostRate) {
             // Try both orientations
@@ -1316,6 +1333,7 @@
             });
             return bestResult;
         }
+
         // Update quick summary in visualization section
         function updateQuickSummary(result) {
             const usagePercent = result.usagePercent.toFixed(1);
@@ -1332,6 +1350,10 @@
                 <div class="summary-item">
                     <span class="summary-label">Total Cuts:</span>
                     <span class="summary-value">${result.totalCuts}</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Total Cut (ft):</span>
+                    <span class="summary-value">${(result.totalRipCuts * result.ripCutLengthFt + result.totalCrossCuts * result.crossCutLengthFt).toFixed(1)}</span>
                 </div>
                 <div class="summary-item">
                     <span class="summary-label">Cut Cost:</span>
@@ -1353,7 +1375,8 @@
                 Efficiency: ${usagePercent}% | Cost: ${result.totalCutCost.toFixed(2)} MVR
             `;
         }
-        // IMPROVED Print function with accurate text-based schematic
+
+        // Print report function
         function printReport() {
             if (!currentResult) { 
                 alert('Nothing to print – run a calculation first.'); 
@@ -1373,6 +1396,7 @@
             document.getElementById('pLen').textContent = (r.totalRipCuts * r.ripCutLengthFt + r.totalCrossCuts * r.crossCutLengthFt).toFixed(1);
             document.getElementById('pWaste').textContent = (100 - r.usagePercent).toFixed(1);
             document.getElementById('pSheetSize').textContent = `${SHEET_WIDTH}" × ${SHEET_LENGTH}"`;
+
             // Build cut lists as text
             const ripList = [];
             for (let i = 1; i <= r.totalRipCuts; i++) {
@@ -1470,31 +1494,38 @@
             // Show print layout temporarily
             const printLayout = document.getElementById('printLayout');
             printLayout.style.display = 'grid';
+
             // Use a small timeout to ensure the layout is visible before print dialog
             setTimeout(() => {
                 window.print();
+                
                 // Hide print layout after printing
                 setTimeout(() => {
                     printLayout.style.display = 'none';
                 }, 100);
             }, 100);
         }
+
         // Main calculation function
         function calculatePieces() {
             const widthInput = document.getElementById('pieceWidth').value;
             const lengthInput = document.getElementById('pieceLength').value;
             const bladeKerf = parseFloat(document.getElementById('bladeKerf').value) || 0.125;
             const cutCostRate = parseFloat(document.getElementById('cutCostRate').value) || 4;
+            
             if (!widthInput || !lengthInput) {
                 alert('Please enter both width and length');
                 return;
             }
+
             const pieceWidth = parseMeasurement(widthInput);
             const pieceLength = parseMeasurement(lengthInput);
+            
             if (pieceWidth <= 0 || pieceLength <= 0) {
                 alert('Please enter valid positive numbers');
                 return;
             }
+
             if (pieceWidth > SHEET_WIDTH || pieceLength > SHEET_LENGTH) {
                 const resultsSection = document.getElementById('resultsSection');
                 resultsSection.style.display = 'block';
@@ -1517,28 +1548,35 @@
                 `;
                 return;
             }
+
             // Use advanced cutting algorithm
             const result = calculateOptimalCuts(pieceWidth, pieceLength, bladeKerf, cutCostRate);
+
             if (!result) {
                 alert("No pieces can be cut from this sheet with the given dimensions.");
                 return;
             }
+
             // Store result for printing
             currentResult = result;
+
             // Update quick summary and visualization
             updateQuickSummary(result);
             createPiecesDiagram(result);
+
             // Calculate waste percentages
             const sheetArea = SHEET_WIDTH * SHEET_LENGTH;
             const kerfLossPercent = ((result.kerfWasteArea / sheetArea) * 100).toFixed(1);
             const wastePercent = (100 - result.usagePercent).toFixed(1);
             const usagePercent = result.usagePercent.toFixed(1);
+
             // Build detailed results HTML
             const resultsHTML = `
                 <div class="main-result">
                     <div class="pieces-count">${result.totalPieces}</div>
                     <div class="result-label">pieces fit on one ${formatDisplayValue(SHEET_WIDTH)} × ${formatDisplayValue(SHEET_LENGTH)} sheet</div>
                 </div>
+
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-label">Material Used</div>
@@ -1553,6 +1591,7 @@
                         <div class="stat-value">${kerfLossPercent}%</div>
                     </div>
                 </div>
+
                 <div class="cost-summary">
                     <h3>💰 Cutting Cost Breakdown</h3>
                     <div class="total-cost">
@@ -1560,6 +1599,7 @@
                         <div class="total-cost-value">${result.totalCutCost.toFixed(2)} MVR</div>
                         <div class="total-cost-label">Per piece: ${result.costPerPiece.toFixed(2)} MVR</div>
                     </div>
+                    
                     <div class="cut-info">
                         <div class="cut-item">
                             <strong>Rip Cuts</strong><br>
@@ -1584,11 +1624,13 @@
                     </div>
                 </div>
             `;
+
             // Display detailed results
             const resultsSection = document.getElementById('resultsSection');
             resultsSection.innerHTML = resultsHTML;
             resultsSection.style.display = 'block';
         }
+
         function createPiecesDiagram(result) {
             const diagram = document.getElementById('piecesDiagram');
             if (!diagram) return;
@@ -1661,6 +1703,7 @@
                 diagram.appendChild(wasteBottom);
             }
         }
+
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             // Setup new features
@@ -1686,6 +1729,7 @@
             // Auto-calculate on load
             setTimeout(calculatePieces, 600);
         });
+
         // Prevent form submission on enter key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
@@ -1696,3 +1740,4 @@
     </script>
 </body>
 </html>
+```
